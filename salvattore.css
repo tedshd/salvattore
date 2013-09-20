@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2013-09-15 19:29:04
+ * @version $Id$
+ */
+
+@-webkit-keyframes showsup {
+  from { opacity: 0; -webkit-transform: translate(0, -20px); }
+  to   { opacity: 1; -webkit-transform: translate(0, 0); }
+}
+@-moz-keyframes showsup {
+  from { opacity: 0; -moz-transform: translate(0, -20px); }
+  to   { opacity: 1; -moz-transform: translate(0, 0); }
+}
+@-o-keyframes showsup {
+  from { opacity: 0; -o-transform: translate(0, -20px); }
+  to   { opacity: 1; -o-transform: translate(0, 0); }
+}
+@keyframes showsup {
+  from { opacity: 0; transform: translate(0, -20px); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+.salvattore-grid-b .item.added {
+  -webkit-animation: showsup 0.5s;
+  -moz-animation: showsup 0.5s;
+  -o-animation: showsup 0.5s;
+  animation: showsup 0.5s;
+}
+
+.layout-redux {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column {
+  float: left;
+  width: 100%;
+}
+
+.one-half {
+  width: 50%;
+}
+.one-third {
+  width: 33.333%;
+}
+.one-quarter {
+  width: 25%;
+}
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  .rs-font-alpha, h1 {
+    font-size: 36px;
+  }
+
+  .rs-font-beta {
+    font-size: 24px;
+  }
+
+  .rs-font-gamma {
+    font-size: 18px;
+  }
+
+  .rs-font-delta {
+    font-size: 18px;
+  }
+
+  .branding {
+    font-size: 72px;
+  }
+  .layout-redux {
+    width: inherit;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  .rs-font-alpha, h1 {
+    font-size: 48px;
+  }
+
+  .rs-font-beta {
+    font-size: 36px;
+  }
+
+  .rs-font-gamma {
+    font-size: 24px;
+  }
+
+  .rs-font-delta {
+    font-size: 24px;
+  }
+
+  .branding {
+    font-size: 96px;
+  }
+
+  .layout-redux {
+    width: inherit;
+  }
+}
+
+/* Grids */
+.salvattore-grid,
+.salvattore-grid-b {
+  margin: 0 -10px;
+}
+
+[data-columns]:before {
+  display: none;
+}
+
+.salvattore-grid[data-columns]:before {
+  content: '4 .column.one-third';
+}
+.salvattore-grid-b[data-columns]:before {
+  content: '3 .column.one-half';
+}
+
+@media screen and (max-width: 480px){
+  .salvattore-grid[data-columns]:before,
+  .salvattore-grid-b[data-columns]:before {
+    content: '1';
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width:819px) {
+  .salvattore-grid[data-columns]:before {
+    content: '2 .column.one-half';
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1299px) {
+  .salvattore-grid[data-columns]:before {
+    content: '3 .column.one-third';
+  }
+}
+@media screen and (min-width: 1300px){
+  .salvattore-grid[data-columns]:before {
+    content: '4 .column.one-quarter';
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1099px) {
+  .salvattore-grid-b[data-columns]:before {
+    content: '2 .column.one-half';
+  }
+}
+@media screen and (min-width: 1100px) {
+  .salvattore-grid-b[data-columns]:before {
+    content: '3 .column.one-third';
+  }
+}
+
